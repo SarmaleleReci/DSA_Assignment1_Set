@@ -1,0 +1,6 @@
+g++ -c Set.cpp
+g++ -c SetIterator.cpp
+g++ -c ExtendedTest.cpp
+g++ -c ShortTest.cpp
+g++ -c App.cpp
+g++ -o App *.o 
