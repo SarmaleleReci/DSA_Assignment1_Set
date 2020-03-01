@@ -4,6 +4,3 @@ g++ -c ExtendedTest.cpp
 g++ -c ShortTest.cpp
 g++ -c App.cpp
 g++ -o App *.o
-./App 
-rm App
-rm *.o

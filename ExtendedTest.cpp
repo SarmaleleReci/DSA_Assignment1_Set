@@ -96,7 +96,7 @@ void testRemove() {
 	}
 	assert(m.size() == 0);
 	//printM(m);
-	for (int i = -100; i < 100; i = i + 2) { 
+	for (int i = -100; i < 100; i = i + 2) {
 		m.add(i);
 	}
 	for (int i = -100; i < 100; i++) { //delete everything (including inexistent elements)
@@ -110,7 +110,7 @@ void testRemove() {
 	assert(m.size() == 0);
 	//printM(m);
 
-	for (int i = -100; i <= 100; i = i + 2) { 
+	for (int i = -100; i <= 100; i = i + 2) {
 		m.add(i);
 	}
 	//printM(m);
@@ -159,22 +159,22 @@ void testIterator() {
 	SetIterator it = s.iterator(); //iterator on an empty set
 	assert(it.valid() == false);
 
-	for (int i = 0; i < 100; i++) {  
+	for (int i = 0; i < 100; i++) {
 		s.add(33);
 	}
 	//printM(m);
-	SetIterator it2 = s.iterator(); 
+	SetIterator it2 = s.iterator();
 	assert(it2.valid() == true);
 	TElem elem = it2.getCurrent();
 	assert(elem == 33);
 	it2.next();
 	assert(it2.valid() == false);
 
-	it2.first(); 
+	it2.first();
 	assert(it2.valid() == true);
 
 	Set s2;
-	for (int i = -100; i < 100; i++) { 
+	for (int i = -100; i < 100; i++) {
 		s2.add(i);
 		s2.add(i);
 		s2.add(i);
@@ -192,7 +192,7 @@ void testIterator() {
 
 
 	Set s3;
-	for (int i = 0; i < 200; i= i + 4) { 
+	for (int i = 0; i < 200; i= i + 4) {
 		s3.add(i);
 	}
 	//printM(m3);
@@ -200,7 +200,7 @@ void testIterator() {
 	SetIterator it4 = s3.iterator();
 	assert(it4.valid() == true);
 	int count = 0;
-	while (it4.valid()) { 
+	while (it4.valid()) {
 		TElem e = it4.getCurrent();
 		assert(e % 4 == 0);
 		it4.next();
@@ -253,7 +253,7 @@ void testQuantity() {//add lots of elements
 		it.next();
 	}
 	it.first();
-	while (it.valid()) { 
+	while (it.valid()) {
 		TElem e = it.getCurrent();
 		assert(s.search(e) == true);
 		it.next();
@@ -278,7 +278,3 @@ void testAllExtended() {
 	testQuantity();
 
 }
-
-
-
-

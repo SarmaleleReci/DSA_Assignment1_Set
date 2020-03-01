@@ -20,25 +20,33 @@ class Set {
         //implicit constructor
         Set();
 
+		int getArraySize() const;    /// TODO: Delete this method
+
+		void printArray() const; 	 /// TODO: Delete this method
+
+		int getElementAtPositionX(int position_x) const{
+			return array[position_x];
+		}
+
         //adds an element to the set
-        bool add(TElem e);
+        bool add(TElem e);			  /// FINISHED
 
         //removes an element from the set
-        bool remove(TElem e);
+        bool remove(TElem e);		 /// FINISHED
 
         //checks whether an element belongs to the set or not
-        bool search(TElem elem) const;
+        bool search(TElem elem) const; /// FINISHED
 
         //returns the number of elements;
-        int size() const;
+        int size() const;		 /// FINISHED
 
         //check whether the set is empty or not;
-        bool isEmpty() const;
+        bool isEmpty() const;    /// FINISHED
 
         //return an iterator for the set
         SetIterator iterator() const;
 
         // destructor
-        ~Set();
+        ~Set();					/// FINISHED
 
 };

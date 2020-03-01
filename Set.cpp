@@ -1,20 +1,44 @@
 #include "Set.h"
 #include "SetIterator.h"
+#include <iostream>
 
 Set::Set() {
 	//TODO - Implementation
-	array_size = 10;
+	array_size = 1;
 	current_position = 0;
 	array = new TElem[array_size];
 }
 
+int Set::getArraySize() const {
+	return array_size;
+}
+
+void Set::printArray() const {
+	for (int i = 0; i < current_position; i++) {
+		std::cout << array[i] << " ";
+	}
+	std::cout << "\n";
+}
 
 bool Set::add(TElem elem) {
+	for (int i = 0; i < current_position; i++) {
+		if (array[i] == elem)
+			return false;
+	}
+
 	array[current_position] = elem;
 	current_position++;
 
 	if (current_position == array_size) {
-		// resize
+		int new_array_size = array_size * 2;
+		TElem *new_array = new TElem[new_array_size];
+
+		for (int i = 0; i < array_size; i++)
+			new_array[i] = array[i];
+
+		array_size = new_array_size;
+		delete[] array;
+		array = new_array;
 	}
 
 	return true;
@@ -22,12 +46,34 @@ bool Set::add(TElem elem) {
 
 
 bool Set::remove(TElem elem) {
-	//TODO - Implementation
-	return false;
+
+	if (!search(elem))
+		return false;
+
+	for (int i = 0; i < current_position; i++) {
+		if (array[i] == elem) {
+			while (i < current_position) {
+				array[i] = array[i+1];
+				i++;
+			}
+
+			break;
+		}
+	}
+
+	current_position--;
+
+	return true;
 }
 
 bool Set::search(TElem elem) const {
-	//TODO - Implementation
+
+	for (int i = 0; i < current_position; i++) {
+		if (array[i] == elem) {
+			return true;
+		}
+	}
+
 	return false;
 }
 
@@ -47,6 +93,7 @@ bool Set::isEmpty() const {
 
 Set::~Set() {
 	//TODO - Implementation
+	delete[] array;
 }
 
 
