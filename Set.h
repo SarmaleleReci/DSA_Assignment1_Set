@@ -16,17 +16,13 @@ class Set {
 		int current_position;
 		TElem *array;
 
+		int getElementAtPositionX(int position_x) const {
+			return array[position_x];
+		}
+
     public:
         //implicit constructor
         Set();
-
-		int getArraySize() const;    /// TODO: Delete this method
-
-		void printArray() const; 	 /// TODO: Delete this method
-
-		int getElementAtPositionX(int position_x) const{
-			return array[position_x];
-		}
 
         //adds an element to the set
         bool add(TElem e);			  /// FINISHED
@@ -44,7 +40,7 @@ class Set {
         bool isEmpty() const;    /// FINISHED
 
         //return an iterator for the set
-        SetIterator iterator() const;
+        SetIterator iterator() const;  /// FINISHED
 
         // destructor
         ~Set();					/// FINISHED

@@ -9,17 +9,6 @@ Set::Set() {
 	array = new TElem[array_size];
 }
 
-int Set::getArraySize() const {
-	return array_size;
-}
-
-void Set::printArray() const {
-	for (int i = 0; i < current_position; i++) {
-		std::cout << array[i] << " ";
-	}
-	std::cout << "\n";
-}
-
 bool Set::add(TElem elem) {
 	for (int i = 0; i < current_position; i++) {
 		if (array[i] == elem)
